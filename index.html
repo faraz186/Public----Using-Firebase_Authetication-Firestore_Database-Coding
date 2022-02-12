@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Job Portal</title>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .navb{
+            padding: 0 8px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper navb #ffc400 amber accent-3">
+          <a href="#" class="brand-logo navb">Job Portal</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="modal-trigger" href="#modal2">Login</a></li>
+            <li><a class="modal-trigger" href="#modal1">Sign Up</a></li>
+            <li><a onclick="logOut()">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- SignUp Modal -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>SignUp</h4>
+      <form autocomplete="off" onsubmit="signup(event)">
+
+          <input type="email" id="SignUpEmail" placeholder="Enter Your Email">
+          <input type="password" id="SignUpPassword" placeholder="Enter Password">
+          <button class="btn waves-effect #ffc400 amber accent-3" type="submit">Submit</button>
+        </form>
+        <button class="btn waves-effect blue-grey" onclick="loginGoogle()">Login Google</button>
+        
+      
+    </div>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4>
+      <form autocomplete="off" onsubmit="Login(event)">
+          <input type="email" id="LoginEmail" placeholder="Enter Your Email">
+          <input type="password" id="LoginPassword" placeholder="Enter Password">
+          <button class="btn waves-effect #ffc400 amber accent-3" type="submit">Submit</button>
+      </form>
+      <button class="btn waves-effect blue-grey" onclick="loginGoogle()">Login Google</button>
+
+    </div>
+  </div>
+
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+<script src="./authentication.js"></script>
+<script src="./firestoreDB.js"></script>
+</html>
